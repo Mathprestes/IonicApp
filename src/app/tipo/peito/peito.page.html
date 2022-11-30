@@ -1,0 +1,35 @@
+<!-- menu -->
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>
+      {{titulo}}
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<!-- corpo -->
+<ion-content [fullscreen]="true">
+
+<ion-list>
+
+    <ion-item class="ion_item" *ngFor="let exerc of listaExerc">
+      <ion-thumbnail slot="start">
+          <img [src]="exerc.img1"/>
+      </ion-thumbnail>
+
+      <ion-label>
+          <p>{{exerc.title}}</p>
+      </ion-label>
+      <ion-icon name="chevron-forward-sharp" (click)="exibirExerc(exerc)"></ion-icon>
+    </ion-item>
+
+</ion-list>
+
+
+</ion-content>

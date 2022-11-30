@@ -1,0 +1,10 @@
+{
+  "name": "prestesApp",
+  "integrations": {
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
+  },
+  "type": "angular"
+}

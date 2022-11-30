@@ -1,0 +1,72 @@
+<!-- menu -->
+<ion-header [translucent]="true" *ngIf="exerc">
+  <ion-toolbar color="dark">
+
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>
+      {{exerc.title}}
+    </ion-title>
+
+    <ion-progress-bar type="indeterminate" color="dark"></ion-progress-bar>
+
+  </ion-toolbar>
+</ion-header>
+
+<!-- corpo -->
+<ion-content [fullscreen]="true">
+
+  <swiper class="banner-slides" *ngIf="exerc" [initialSlide]="1" [slidesPerView]="1.25" [spaceBetween]="20" [centeredSlides]="true"
+  #swiper>
+  <ng-template swiperSlide><img [src]="exerc.img2" alt=""></ng-template>
+  <ng-template swiperSlide><img [src]="exerc.img3" alt=""></ng-template>
+  <ng-template swiperSlide><img [src]="exerc.img4" alt=""></ng-template>
+  </swiper>
+
+  <ion-grid class="grid_button" [fixed]="true">
+    <ion-row>
+
+      <ion-col>
+        <ion-button class="button_info" color="danger" (click)="setOpen(true)">
+          <ion-icon name="information-circle-sharp"></ion-icon>
+        </ion-button>
+      </ion-col>
+
+      <ion-col></ion-col>
+
+      <ion-col>
+        <ion-fab>
+          <ion-button class="button_video">
+            <ion-icon name="logo-youtube"></ion-icon>
+          </ion-button>
+        </ion-fab>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+  <h1 style="text-align:center"> CALCULO </h1>
+
+  <ion-modal [isOpen]="isModalOpen" *ngIf="exerc">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Informações</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false)">Fechar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <img [src]="exerc.img1" alt="">
+        <br>
+        <p>
+          {{exerc.descricao}}
+        </p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+</ion-content>
