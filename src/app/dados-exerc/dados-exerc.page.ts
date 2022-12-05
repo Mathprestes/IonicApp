@@ -30,6 +30,7 @@ export class DadosExercPage implements OnInit {
 
   ngOnInit() {
     this.exerc = this.dadosService.pegarDados('exerc');
+    console.log('exerc Enviado', this.exerc);
   }
 
 }
